@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Youtube downloader</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("[name='webUrl']").focus();
+            // alert($(".check1").text())
+            if ($(".check1").text() == "True"){
+                alert("Please enter correct youtube url.");
+            }
+        });
+    </script>
+    <style>
+        body{
+            background-image: url("..\\static\\cloud.jpg");
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome</h1>
+    <form action="/download" method="post">
+        <p>Please enter the youtube website's url:</p>
+        <p><input type="text" name="webUrl"></p><br>
+        <input type="submit" value="Submit">
+    </form>
+    <p class="check1" hidden>{{error}}</p>
+</body>
+</html>
